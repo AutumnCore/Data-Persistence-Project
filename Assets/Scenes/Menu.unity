@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 212976143}
   - component: {fileID: 212976142}
   - component: {fileID: 212976141}
+  - component: {fileID: 212976144}
   m_Layer: 5
   m_Name: InputName
   m_TagString: Untagged
@@ -446,6 +447,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212976139}
   m_CullTransparentMesh: 1
+--- !u!114 &212976144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212976139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d862c03899c8a4cbcc11d16a110b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &428258690
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,53 +899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bestScoreText: {fileID: 540495036}
---- !u!1 &596622959
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 596622961}
-  - component: {fileID: 596622960}
-  m_Layer: 0
-  m_Name: NameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &596622960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596622959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b91db0739a28947b8859a55159b210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameInputField: {fileID: 212976141}
-  playerName: 
-  bestScore: 0
---- !u!4 &596622961
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596622959}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &813415730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1028,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &1224493662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1224493664}
+  - component: {fileID: 1224493663}
+  m_Layer: 0
+  m_Name: PersistentDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1224493663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224493662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff9d77126c12b94c87e3cd1778fb975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bestPlayerName: 
+  bestScore: 0
+  currentPlayerName: 
+--- !u!4 &1224493664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224493662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302424265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,9 +1666,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1762818708}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: StartButtonPressed
+      - m_Target: {fileID: 212976144}
+        m_TargetAssemblyTypeName: InputField, Assembly-CSharp
+        m_MethodName: PassPlayerName
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1665,9 +1678,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 596622960}
-        m_TargetAssemblyTypeName: NameManager, Assembly-CSharp
-        m_MethodName: SaveName
+      - m_Target: {fileID: 1762818708}
+        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+        m_MethodName: StartButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

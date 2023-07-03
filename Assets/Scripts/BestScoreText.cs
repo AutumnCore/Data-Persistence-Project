@@ -7,11 +7,11 @@ public class BestScoreText : MonoBehaviour
 {
     public TextMeshProUGUI bestScoreText;
 
-    void OnEnable()
+    void Start()
     {
-        if(NameManager.Instance != null)
+        if(PersistentDataManager.Instance != null)
         {
-            NameManager.Instance.PassBestScore();
+            PersistentDataManager.Instance.PassBestScore();
         }
     }
     public void SetBestScoreText(string playerName, int bestScore)

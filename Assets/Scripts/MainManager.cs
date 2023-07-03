@@ -62,6 +62,16 @@ public class MainManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
+            else if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                Debug.Log("Backspace was pressed");
+                PersistentDataManager.Instance.SaveBestScoreToDisc("", 0);
+                PersistentDataManager.Instance.PassBestScore();
+            }
         }
     }
 
@@ -75,6 +85,7 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
-        NameManager.Instance.CompareScore(m_Points);
+        PersistentDataManager.Instance.CompareScore(m_Points);
+        PersistentDataManager.Instance.PassBestScore();
     }
 }
