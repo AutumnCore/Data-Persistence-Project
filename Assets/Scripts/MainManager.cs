@@ -68,9 +68,7 @@ public class MainManager : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.Backspace))
             {
-                Debug.Log("Backspace was pressed");
-                PersistentDataManager.Instance.SaveBestScoreToDisc("", 0);
-                PersistentDataManager.Instance.PassBestScore();
+                PersistentDataManager.Instance.DeleteBestScore();
             }
         }
     }

@@ -81,6 +81,13 @@ public class PersistentDataManager : MonoBehaviour
         }
     }
 
+    public void DeleteBestScore()
+    {
+        bestPlayerName = "";
+        bestScore = 0;
+        SaveBestScoreToDisc(bestPlayerName, bestScore);
+        PassBestScore();
+    } 
     
     private void OnApplicationQuit()
     {
